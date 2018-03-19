@@ -11,8 +11,7 @@ void catcher(float x1);
 unsigned int randNum(void);
 
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
   glutInitWindowPosition(0,0);
@@ -29,8 +28,7 @@ int main(int argc, char **argv)
 float x = 0.0, y = -0.705, x1 = -1.0, y1 = 0.0;
 int count = 0; int num = 0; float amount = 0.0009;
 int score = 0; int miss = 0;
-void idle(void)
-{
+void idle(void) {
   y -= amount;
   if(count == 0){
     printf("%s\n", "Your current score will display here.");
@@ -106,8 +104,7 @@ void idle(void)
   glutPostRedisplay();
 
 }
-void keyboard(char key)
-{
+void keyboard(char key) {
   switch(key){
   case 033:
     exit(0);
@@ -123,8 +120,7 @@ void keyboard(char key)
   }
   glutPostRedisplay();
 }
-void fallingMan(float x, float y)
-{
+void fallingMan(float x, float y) {
   glClearColor(1.0,1.0,1.0,1.0);  
   glClear(GL_COLOR_BUFFER_BIT);
   glColor3f(0.0,0.0,0.0);
@@ -186,8 +182,7 @@ void fallingMan(float x, float y)
   glEnd();
 }
 
-void catcher(float x1)
-{
+void catcher(float x1) {
   glColor3f(0.5,0.0,0.0);
   glBegin(GL_POLYGON);
   for(int i = 0; i<=3000; i++){
@@ -218,11 +213,11 @@ void catcher(float x1)
   glEnd();
 
 }
-unsigned int randNum(void){
+unsigned int randNum(void) {
   double s = (double)rand()/RAND_MAX;
   return (4)*s+1;
 }
-void gridLines(void){
+void gridLines(void) {
 
   //Grid Lines
   /*
